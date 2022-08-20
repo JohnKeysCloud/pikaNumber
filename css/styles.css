@@ -1,0 +1,343 @@
+@font-face {
+  font-family: 'pixeBoy';
+  src: url(../fonts/pixeBoy.woff2);
+}
+
+@font-face {
+  font-family: 'Gosha Sans Regular';
+  src: url(../fonts/GoshaSansRegular.otf);
+}
+
+@keyframes heading {
+  from {
+    transform: translateX(-15px) scaleY(0.88) rotateX(-8deg) scale(1.3);
+  }
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+::selection {
+  color: yellow;
+  background-color: black;
+}
+
+:root {
+  --h1-fontsize: clamp(3.5rem, 7vw, 7rem);
+  --h2-fontsize: clamp(2.5rem, 5vw, 5rem);
+  --p-fontsize: clamp(1.5rem, 3vw, 3rem);
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow:hidden;
+}
+
+body {
+  background: #B485D8;
+  font-family: 'Gosha Sans Regular';
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+
+#card {
+  position: relative;
+  
+  font-size: 1rem;
+  
+  background-color: rebeccapurple;
+  box-shadow: inset 0 0 5em black, 0 0 0.1em 0.5em black;
+  border-radius: 133px;
+  border-bottom-left-radius: 33px;
+  border-top-right-radius: 33px;
+  color: white;
+  filter: drop-shadow(0 0 11px yellow);
+  padding: 2em;
+
+  width: clamp(233px, 50vw, 500px);
+}
+
+#card #pikaBubble-container {
+  position: absolute;
+  bottom: 377px;
+  left: 255px;
+
+  background: url(../img/thoughtBubble.gif) center / contain no-repeat;
+  filter: drop-shadow(0 0 8px black);
+  opacity: 0.88;
+
+  height: 179px;
+  width: 200px;
+
+  transform: scale(1.1);
+}
+
+#card #response {
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translate(-50%);
+  
+  
+  color: black;
+  font-family: 'pixeBoy', 'Courier New', Courier, monospace;
+  font-size: 1.33rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+  opacity: 1;
+  text-align: center;
+
+  width: 130px;
+}
+
+#card #card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+
+  height: 100%;
+}
+
+#card #header-container {
+  position: relative;
+}
+
+#card #header-container #header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  filter: drop-shadow(0 0 5px black);
+  margin-bottom: 18px;
+  text-shadow: 0 0 8px black;
+}
+
+#card #header-container #header-text h1 {
+  color: #ffd73f;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  margin-bottom: 11px;
+  text-align: center;
+  text-shadow: 0 0 12px black;
+
+  animation: heading 5s ease-in infinite alternate;
+}
+
+#card #header-container #header-text p {
+  color: white;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  margin: 0;
+  text-shadow: 0 0 8px white;
+
+  width: min(67%, 222px);
+
+  animation: heading 5s ease-in infinite alternate-reverse;
+}
+
+#card #header-container #pikachu-container {
+  position: absolute;
+  bottom: 33px;
+  left: 80%;
+  
+  filter: drop-shadow(-8px 8px 11px black);
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
+  width: clamp(155px, 22vw, 288px);
+
+  transform: rotate(23deg);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#card #form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;  
+}
+
+#card #radio-container {
+  display: flex;
+  justify-content: space-evenly;
+  
+  margin-bottom: 18px;
+
+  width: inherit;
+}
+
+#card #radio-container .fullNumberOption {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-size: 2rem;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
+  height: 55px;
+  width: 55px;
+
+  isolation: isolate;
+}
+
+#card #radio-container .fullNumberOption::before {
+  position: absolute;
+  right: 0;
+  
+  content: '';
+
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px black;
+
+  height: 55px;
+  width: 55px;
+
+  z-index: -1;
+}
+
+#card #radio-container .fullNumberOption::after {
+  position: absolute;
+  right: 2px;
+
+  content: '';
+
+  border: 7px dashed #ffd73f;
+  border-radius: 50%;
+  line-height: 0;
+
+  height: 50px;
+  width: 50px;
+}
+
+#card #radio-container .numberOption {
+  position: absolute;
+  right: 0;
+
+  border: 5px ridge black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 13px yellow;
+  font-family: 'Gosha Sans Regular', 'Courier New', Courier, monospace;
+  vertical-align: -6px;
+
+  height: 58px;
+  width: 58px;
+
+  transform: translateX(5px);
+
+  z-index: 1;
+}
+
+#card #radio-container .numberOption::before {
+  position: absolute; 
+  bottom: 28px;
+  right: 28px;
+
+  content: '';
+
+  background: url('../img/bolt.gif') center / contain no-repeat;
+  opacity: 0;
+
+  height: 58px;
+  width: 58px;
+
+  transform: scale(0);
+  transition: opacity 333ms ease-in, transform 333ms ease-in;
+}
+
+#card #radio-container .numberOption:checked::before {
+  opacity: 1;
+  transform: scale(1);
+} 
+
+#card #radio-container .numberOption:focus,
+#card #radio-container .numberOption:focus-visible {
+  box-shadow: inset 0 0 13px yellow, 0 0 3px 5px yellow;
+  outline: none;
+}
+
+#card #enterBtn {
+  background-color: red;
+  border: 5px ridge black;
+  border-radius: 33px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: inset 0 0 21px black;
+  color: white;
+  font-family: 'Gosha Sans Regular', 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  padding: 8px 33px;
+
+  transition: transform 55ms ease-in;
+}
+
+#card #enterBtn:hover {
+  transform: scale(1.02) rotateX(13deg);
+} 
+
+#card #enterBtn:active {
+  transform: scale(0.98) rotateY(13deg);
+}
+
+@media only screen and (max-width: 900px) {
+  #card #pikaBubble-container {
+    left: -18%;
+
+    opacity: .85;
+    
+    transform: translateX(50%) scale(1.1);
+
+    z-index: 1;
+  }
+
+  #card #header-container #pikachu-container {
+    position: absolute;
+    bottom: 100px;
+    left: 60%;
+
+    filter: drop-shadow(-8px 8px 11px black);
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    height: auto;
+    width: clamp(155px, 22vw, 288px);
+
+    transform: translateX(-50%);
+  }  
+}
+
+@media only screen and (max-width: 600px) {
+  #card #pikaBubble-container {
+    left: -3%;
+
+    transform: scale(1);
+  }
+}
