@@ -51,6 +51,7 @@ body {
 
   display: grid;
   place-items: center;
+  padding-top: 18vh;
 }
 
 #portfolio-link {
@@ -80,7 +81,7 @@ body {
   border: 1px ridge #ffd73f;
   border-bottom-left-radius: 33px;
   border-top-right-radius: 33px;
-  color: white;
+  color: white; 
   filter: drop-shadow(0 0 11px yellow);
   padding: 2em;
 
