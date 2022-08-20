@@ -10,7 +10,7 @@
 
 @keyframes heading {
   from {
-    transform: translateX(-15px) scaleY(0.88) rotateX(-8deg) scale(1.3);
+    transform: translateX(21px) scaleY(0.88) rotateY(-13deg) scale(1.3);
   }
 }
 
@@ -42,7 +42,8 @@ html {
 }
 
 body {
-  background: #B485D8;
+  /* background: #B485D8; */
+  background: linear-gradient(to bottom right, #B485D8, #8733c7,#B485D8);
   font-family: 'Gosha Sans Regular';
   margin: 0;
   overflow: hidden;
@@ -52,14 +53,31 @@ body {
   place-items: center;
 }
 
+#portfolio-link {
+  position: fixed;
+  top: 21px;
+  right: 21px;
+
+  z-index: 1;
+}
+
+#cycloneStudios {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  width: clamp(77px, 11vw, 222px);
+}
+
 #card {
   position: relative;
   
   font-size: 1rem;
   
   background-color: rebeccapurple;
-  box-shadow: inset 0 0 5em black, 0 0 0.1em 0.5em black;
+  box-shadow: inset 0 0 5em black, 0 0 0em 0.8em black;
   border-radius: 133px;
+  border: 1px ridge #ffd73f;
   border-bottom-left-radius: 33px;
   border-top-right-radius: 33px;
   color: white;
@@ -128,8 +146,8 @@ body {
 
 #card #header-container #header-text h1 {
   color: #ffd73f;
-  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-  margin-bottom: 11px;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  margin-bottom: 5px;
   text-align: center;
   text-shadow: 0 0 12px black;
 
@@ -183,7 +201,7 @@ input[type="radio"] {
   
   margin-bottom: 18px;
 
-  width: inherit;
+  width: 100%;
 }
 
 #card #radio-container .fullNumberOption {
@@ -335,6 +353,10 @@ input[type="radio"] {
 }
 
 @media only screen and (max-width: 600px) {
+  #card {
+    padding: 1.11em;
+  }
+
   #card #pikaBubble-container {
     left: -3%;
 
