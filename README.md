@@ -10,7 +10,7 @@ Pikachu will pick one of the 3 choices at random
 
 Written in vanilla HTML, CSS & JavaScript with love!
 No templates used & no outside inspiration for the responsive design.
-Built also to display my creative ability in terms of front-end design (UX/UI) without the use a framework.
+Built also to display my creative ability in terms of front-end design (UX/UI) without the use of a framework.
 100%, my own code.
 
 Thanks for checking it out!
