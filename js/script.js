@@ -41,15 +41,29 @@ function theChoiceIsYours() {
     let response = document.getElementById('response');
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
 
-    // pikachuUsedThunderBolt
-    const thunderBolt = document.getElementById('thunderBolt-container');
-    thunderBolt.classList.add('superEffective');
+    // pikachuUsedWildCharge
+    const pikaMovesetContainer = document.getElementById('pikaMoveset-container');
+    pikaMovesetContainer.classList.add('aCriticalHit');
 
-    // itsSuperEffective
+    // A critical hit!
     setTimeout(function () {
-      thunderBolt.classList.remove('superEffective');
+      pikaMovesetContainer.classList.remove('aCriticalHit');
     }, 770);
 
+    
+    // TODO: project01: ADD COUNTER FOR STREAKS & MULTIPLIERS
+    // pikachuUsedThunderShock (TODO: 3x || 5x Multiplier)
+    
+    // TODO: pressStart
+      // pikaMovesetContainer.classList.add("itsSuperEffective");
+      // setTimeout(function () {
+      //   pikaMovesetContainer.classList.remove("itsSuperEffective");
+      // }, 770);
+    
+    // It's super effective!
+      // addCodeHere
+    // TODO: gameOver
+  
   } else if (userNumber === undefined) {
     response.textContent = 'pika-pika… pika-pik-a-Number!';
   } else {
@@ -63,5 +77,5 @@ function theChoiceIsYours() {
   // resetUserNumber
   userNumber = undefined;
 
-  console.log(response.innerHTML + ' CLICK RESET TO TRY AGAIN!');
+  console.log(response.innerHTML);
 };

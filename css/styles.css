@@ -329,29 +329,35 @@ input[type="radio"] {
   transform: scale(0.98) rotateY(13deg);
 }
 
-#thunderBolt-container {
+#pikaMoveset-container {
   position: fixed;
   inset: 0;
 
   opacity: 0;
-  transition: opacity ease-out 0.77s ;
 
   z-index: -1;
 }
 
-#thunderBolt {
+/* transition lasts 0.77s via JS */
+#pikaMoveset-container.aCriticalHit {
+  opacity: 1;
+}
+
+#pikaMoveset {
   height: 100%;
   width: 100%;
-
-  /* for pikachu used spark (electricity hue correction) */
-  /* filter: hue-rotate(400deg); */
-  filter: hue-rotate(270deg) drop-shadow(0 0 11px black);
+  
+  filter: hue-rotate(40deg) drop-shadow(0 0 11px black);
   pointer-events: none;
 }
 
-#thunderBolt-container.superEffective {
+/* #pikaMoveset-container.itsSuperEffective {
   opacity: 1;
 }
+
+#pikaMoveset-container.itsSuperEffective > #pikaMoveset {
+  filter: hue-rotate(270deg) drop-shadow(0 0 11px black);
+} */
 
 @media only screen and (max-width: 900px) {
   #card #pikaBubble-container {
