@@ -93,7 +93,7 @@ body {
   bottom: 377px;
   left: 255px;
 
-  background: url(../img/thoughtBubble.gif) center / contain no-repeat;
+  background: url(../img/speechBubble.gif) center / contain no-repeat;
   filter: drop-shadow(0 0 11px yellow);
   opacity: 0.88;
 
@@ -105,14 +105,14 @@ body {
 
 #card #response {
   position: absolute;
-  bottom: 62px;
+  bottom: 74px;
   left: 50%;
   transform: translate(-50%);
   
   
   color: black;
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
-  font-size: 1.33rem;
+  font-size: 1.313rem;
   letter-spacing: 0.5px;
   margin: 0;
   opacity: 1;
@@ -327,6 +327,30 @@ input[type="radio"] {
 
 #card #enterBtn:active {
   transform: scale(0.98) rotateY(13deg);
+}
+
+#thunderBolt-container {
+  position: fixed;
+  inset: 0;
+
+  opacity: 0;
+  transition: opacity ease-out 0.77s ;
+
+  z-index: -1;
+}
+
+#thunderBolt {
+  height: 100%;
+  width: 100%;
+
+  /* for pikachu used spark (electricity hue correction) */
+  /* filter: hue-rotate(400deg); */
+  filter: hue-rotate(270deg) drop-shadow(0 0 11px black);
+  pointer-events: none;
+}
+
+#thunderBolt-container.superEffective {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 900px) {
