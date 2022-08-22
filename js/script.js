@@ -79,3 +79,5 @@ function theChoiceIsYours() {
 
   console.log(response.innerHTML);
 };
+
+// TODO: slice NOPE & YUP string to change color and size
