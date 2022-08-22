@@ -44,6 +44,8 @@ function theChoiceIsYours() {
     // pikachuUsedThunderBolt
     const thunderBolt = document.getElementById('thunderBolt-container');
     thunderBolt.classList.add('superEffective');
+
+    // itsSuperEffective
     setTimeout(function () {
       thunderBolt.classList.remove('superEffective');
     }, 770);
