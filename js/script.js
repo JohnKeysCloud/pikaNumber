@@ -1,6 +1,5 @@
-let userNumber;
-
 //get userNumber
+let userNumber;
 const pikaRadio = document.getElementsByClassName('numberOption');
 for (const radio of pikaRadio) {
   radio.onclick = (e) => {
@@ -19,7 +18,18 @@ for (const radio of pikaRadio) {
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
 
-// level
+// streakStartElements
+let counter = 0;
+const pikaMovesetContainer = document.getElementById("pikaMoveset-container");
+let body = document.querySelector('body');
+let streakContainer = document.getElementById('streak-container');
+let streak = document.getElementById('streak');
+let cardFilter = document.getElementById("card");
+let pikaBubble = document.getElementById('pikaBubble-container');
+let pikachuUsed = document.getElementById("pikachuUsed");
+let pikaMove;
+
+// pikaNumberGAME
 function theChoiceIsYours() {
 
   // get pikaNumber
@@ -37,38 +47,106 @@ function theChoiceIsYours() {
 
   // showResponse
   if (pikaNumber === userNumber) {
-    
-    let response = document.getElementById('response');
+    let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
+    // TODO: slice NOPE & YUP string to change color and size
 
-    // pikachuUsedWildCharge
-    const pikaMovesetContainer = document.getElementById('pikaMoveset-container');
-    pikaMovesetContainer.classList.add('aCriticalHit');
-
+    pikaMovesetContainer.classList.add("aCriticalHit");
     // A critical hit!
     setTimeout(function () {
-      pikaMovesetContainer.classList.remove('aCriticalHit');
+      pikaMovesetContainer.classList.remove("aCriticalHit");
     }, 770);
 
-    
-    // TODO: project01: ADD COUNTER FOR STREAKS & MULTIPLIERS
-    // pikachuUsedThunderShock (TODO: 3x || 5x Multiplier)
-    
-    // TODO: pressStart
-      // pikaMovesetContainer.classList.add("itsSuperEffective");
-      // setTimeout(function () {
-      //   pikaMovesetContainer.classList.remove("itsSuperEffective");
-      // }, 770);
-    
-    // It's super effective!
-      // addCodeHere
-    // TODO: gameOver
-  
+    counter = ++counter;
+    streak.innerHTML = `STREAK: ${counter}`;
+
+    // showStreakContainer
+    streakContainer.classList.add("oneUp");
+
+    if (counter > 0 && counter < 3) {
+      body.style.setProperty("background", "black");
+      document.documentElement.style.setProperty("--radio-box-shadow", "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF");
+      cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
+      pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
+
+      pikaMove = "wildCharge";
+    } else if (counter >= 3) {
+
+      pikaMove = "thunderShock";
+
+      // pikachuUsedThunderShock - radio box shadow swap
+      document.documentElement.style.setProperty(
+        "--radio-box-shadow",
+        "inset 0 0 13px red, 0 0 3px 5px red"
+      );
+
+      // pikachuUsedThunderShock - card filter swap
+      cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+
+      // pikachuUsedThunderShock - pikaBubble filter swap
+      pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+
+      // pikachuUsedThunderShock - img swap
+      document.documentElement.style.setProperty(
+        "--pikaSwap",
+        "url('../img/pikaStreakThreePlus.gif') center / contain no-repeat"
+      );
+
+      // enlarge Pikachu
+      document.documentElement.style.setProperty(
+        "--streak-scale",
+        "scale(0.38)"
+      );
+
+      // pikachuUsedThunderShock - bolt hue swap
+      pikaMovesetContainer.classList.add("itsSuperEffective");
+      //itsSuperEffective
+      setTimeout(function () {
+        // to be removed if timer is introduced
+        pikaMovesetContainer.classList.remove("itsSuperEffective");
+      }, 1330);
+    };
+
+    // pikaMove - text Swap
+    pikachuUsed.textContent = `// Pikachu used ${pikaMove}!`;
+
+    // 3x multiplier
+    if (counter % 3 === 0) {
+      streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
+    }
+    // setTimeout(function () {
+    //   streak.style.setProperty("animation", "none");
+    // }, 333);
+
   } else if (userNumber === undefined) {
     response.textContent = 'pika-pika… pika-pik-a-Number!';
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
-  } 
+
+    // resets
+    counter = 0;
+    body.style.setProperty("background", "linear-gradient(to bottom right, #B485D8, #8733c7,#B485D8)");
+    document.documentElement.style.setProperty(
+      "--radio-box-shadow",
+      "inset 0 0 13px yellow, 0 0 3px 5px yellow"
+    );
+    streakContainer.classList.remove("oneUp");
+    cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+    pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+    pikaMovesetContainer.classList.remove("itsSuperEffective");
+
+    // reset to pikaStreakStart.gif
+    document.documentElement.style.setProperty(
+      "--pikaSwap",
+      "url('../img/pikaStreakStart.gif') center / contain no-repeat"
+    );
+
+    // reset pikachu size
+    document.documentElement.style.setProperty(
+      "--streak-scale",
+      "scale(0.25)"
+    );
+  }
 
   // resetRadioBtn
   let radioName = document.getElementsByName('selectNumber');
@@ -79,5 +157,3 @@ function theChoiceIsYours() {
 
   console.log(response.innerHTML);
 };
-
-// TODO: slice NOPE & YUP string to change color and size

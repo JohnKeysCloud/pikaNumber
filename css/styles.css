@@ -14,6 +14,12 @@
   }
 }
 
+@keyframes levelUp {
+  from {
+    transform: scale(1.05);
+  }
+}
+
 h1,
 h2 {
   margin: 0;
@@ -28,6 +34,11 @@ h2 {
   --h1-fontsize: clamp(3.5rem, 7vw, 7rem);
   --h2-fontsize: clamp(2.5rem, 5vw, 5rem);
   --p-fontsize: clamp(1.5rem, 3vw, 3rem);
+
+  --pikaSwap: url('../img/pikaStreakStart.gif') center / contain no-repeat;
+  --streak-scale: scale(0.25);
+
+  --radio-box-shadow: inset 0 0 13px yellow, 0 0 3px 5px yellow;
 }
 
 *, 
@@ -42,7 +53,6 @@ html {
 }
 
 body {
-  /* background: #B485D8; */
   background: linear-gradient(to bottom right, #B485D8, #8733c7,#B485D8);
   font-family: 'Gosha Sans Regular';
   margin: 0;
@@ -95,7 +105,6 @@ body {
 
   background: url(../img/speechBubble.gif) center / contain no-repeat;
   filter: drop-shadow(0 0 11px yellow);
-  opacity: 0.88;
 
   height: 179px;
   width: 200px;
@@ -119,6 +128,65 @@ body {
   text-align: center;
 
   width: 130px;
+}
+
+#card #streak-container {
+  opacity: 0;
+  transform: scale(0);
+
+  transition: all 111ms ease-in-out;
+}
+
+#card #streak-container.oneUp {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#card #streak {
+  position: absolute;
+
+  top: 111px;
+  right: 222px;
+
+  display: inline-block;
+  
+  height: max-content;
+  width: max-content;
+
+  color: whitesmoke;
+  filter: drop-shadow(-8px 0 5px black);  
+  font-family: 'pixeBoy', 'Courier New', Courier, monospace;
+  font-size: 3.313rem;
+  text-shadow: -5px 3px 8px black;
+}
+
+#card #pikachuUsed {
+  position: absolute;
+
+  top: 160px;
+  right: 160px;
+
+  color: black;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: 0 0 3px white;
+
+  width: max-content;
+}
+
+#card #streak::before {  
+  content: '';
+
+  position: absolute;
+  top: -125px;
+  right: 50px;
+
+  background: var(--pikaSwap);
+  height: 285px;
+  width: 400px;
+
+  transform: var(--streak-scale);
+  z-index: -1;
 }
 
 #card #card-content {
@@ -274,7 +342,7 @@ input[type="radio"] {
 }
 
 #card #radio-container .numberOption:checked {
-  box-shadow: inset 0 0 13px yellow, 0 0 3px 5px yellow;
+  box-shadow: var(--radio-box-shadow);
 }
 
 #card #radio-container .numberOption::before {
@@ -302,7 +370,7 @@ input[type="radio"] {
 
 #card #radio-container .numberOption:focus,
 #card #radio-container .numberOption:focus-visible {
-  box-shadow: inset 0 0 13px yellow, 0 0 3px 5px yellow;
+  box-shadow: var(--radio-box-shadow);
   outline: none;
 }
 
@@ -348,21 +416,22 @@ input[type="radio"] {
   opacity: 1;
 }
 
-#pikaMoveset {
+#pikaMoveset-container.itsSuperEffective {
+  opacity: 1;
+}
+
+#pikaMoveset-container.itsSuperEffective > #pikaMoveset {
+  filter: hue-rotate(270deg) drop-shadow(0 0 11px black);
+}
+
+#pikaMoveset-container #pikaMoveset {
+  
   height: 100%;
   width: 100%;
   
   filter: hue-rotate(40deg) drop-shadow(0 0 11px black);
   pointer-events: none;
 }
-
-/* #pikaMoveset-container.itsSuperEffective {
-  opacity: 1;
-}
-
-#pikaMoveset-container.itsSuperEffective > #pikaMoveset {
-  filter: hue-rotate(270deg) drop-shadow(0 0 11px black);
-} */
 
 @media only screen and (max-width: 900px) {
   #card #pikaBubble-container {
