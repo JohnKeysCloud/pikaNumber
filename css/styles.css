@@ -472,11 +472,8 @@ input[type="radio"] {
   }
 
   #card #streak::before {  
-  content: '';
-
-  position: absolute;
-  top: -188px;
-  right: -88px;
+    top: -188px;
+    right: -88px;
   }
 }
 
@@ -512,5 +509,4 @@ input[type="radio"] {
     top: -188px;
     right: -111px;
   }
-
 }
