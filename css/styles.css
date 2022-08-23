@@ -161,7 +161,7 @@ body {
   color: whitesmoke;
   filter: drop-shadow(-8px 0 5px black);  
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
-  font-size: 3.313rem;
+  font-size: 3.125rem;
   text-shadow: -5px 3px 8px black;
 }
 
@@ -434,20 +434,10 @@ input[type="radio"] {
 }
 
 @media only screen and (max-width: 900px) {
-  #card #pikaBubble-container {
-    left: -18%;
-
-    opacity: 0.85;
-    
-    transform: translateX(50%) scale(1.1);
-
-    z-index: 1;
-  }
-
   #card #header-container #pikachu-container {
     position: absolute;
     bottom: 100px;
-    left: 60%;
+    left: 90%;
 
     filter: drop-shadow(-8px 8px 11px black);
     -webkit-user-select: none; /* Safari */        
@@ -461,23 +451,32 @@ input[type="radio"] {
     transform: translateX(-50%);
   } 
 
-  #card #streak-container {
-    top: -44px;
-    right: -23px;
+  #card #pikaBubble-container {
+    bottom: 418px;
+    left: 14%;
 
+    opacity: 0.85;
+    
+    transform: translateX(50%) scale(1.1);
   }
-  
-  #card #streak-container > * {
-    transform: scale(0.7);
+
+  #card #streak-container {
+    top: 177px;
+    right: 155px;
   }
 
   #card #streak-container #pikachuUsed {
     position: absolute;
-    top: 577px;
-    right: 0px;
+    top: 403px;
+    right: -77px;
+  }
 
-    color: white;
-    text-shadow: 0px 3px 0 black;
+  #card #streak::before {  
+  content: '';
+
+  position: absolute;
+  top: -188px;
+  right: -88px;
   }
 }
 
@@ -487,14 +486,31 @@ input[type="radio"] {
   }
 
   #card #pikaBubble-container {
-    left: -3%;
+    bottom: 365px;
+    left: -18%;
+    
+    transform: translateX(50%) scale(1.1);
+  }
 
-    transform: scale(1);
+  #card #streak-container {
+    top: 177px;
+    right: 133px;
   }
 
   #card #streak-container #pikachuUsed {
-    top: 613px;
-    
+    top: 363px;
+    right: -121px;
 
+    font-size: 1.125rem;
   }
+
+  #card #streak { 
+    font-size: 2.313rem; 
+  }
+
+  #card #streak::before {  
+    top: -188px;
+    right: -111px;
+  }
+
 }
