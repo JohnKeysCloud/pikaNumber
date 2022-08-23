@@ -33,8 +33,6 @@ const cityScape = document.getElementById('cityScape-theme');
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
 
-
-
 // TODO: FIX
 // pikaRadio.addEventListener("keyup", (e) => {
 //   if (e.keyCode === "Enter") {
@@ -59,7 +57,6 @@ function theChoiceIsYours() {
   );
 
   // showResponse
-  pikaNumber = 1;
   if (pikaNumber === userNumber) {
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
