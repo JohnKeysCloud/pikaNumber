@@ -55,7 +55,6 @@ function theChoiceIsYours() {
   );
 
   // showResponse
-  pikaNumber = 1; 
   if (pikaNumber === userNumber) {
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
