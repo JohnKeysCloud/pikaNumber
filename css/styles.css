@@ -67,7 +67,7 @@ body {
 #portfolio-link {
   position: fixed;
   top: 21px;
-  right: 21px;
+  left: 21px;
 
   z-index: 1;
 }
@@ -495,10 +495,10 @@ input[type="radio"] {
   }
 
   #card #streak-container #pikachuUsed {
-    top: 363px;
-    right: -121px;
+    top: 340px;
+    right: -88px;
 
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   #card #streak { 
