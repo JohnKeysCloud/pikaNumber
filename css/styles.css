@@ -483,14 +483,14 @@ input[type="radio"] {
   }
 
   #card #pikaBubble-container {
-    bottom: 365px;
+    bottom: 370px;
     left: -18%;
     
     transform: translateX(50%) scale(1.1);
   }
 
   #card #streak-container {
-    top: 177px;
+    top: 182px;
     right: 133px;
   }
 
