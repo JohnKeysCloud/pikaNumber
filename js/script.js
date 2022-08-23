@@ -4,7 +4,6 @@ const pikaRadio = document.getElementsByClassName('numberOption');
 for (const radio of pikaRadio) {
   radio.onclick = (e) => {
     userNumber = +e.target.value;
-
     console.log(
       `userNumber = ${userNumber}. It has a type of` +
       ' ' +
@@ -13,10 +12,6 @@ for (const radio of pikaRadio) {
     );
   };
 }
-
-// pressStart
-const enterBtn = document.getElementById('enterBtn');
-enterBtn.addEventListener('click', theChoiceIsYours);
 
 // streakStartElements
 let counter = 0;
@@ -29,6 +24,20 @@ let pikaBubble = document.getElementById('pikaBubble-container');
 let pikachuUsed = document.getElementById("pikachuUsed");
 let pikaMove;
 
+// pressStart
+const enterBtn = document.getElementById('enterBtn');
+enterBtn.addEventListener('click', theChoiceIsYours);
+
+
+
+pikaRadio.addEventListener("keyup", (e) => {
+  if (e.keyCode === "Enter") {
+    enterBtn.click();
+  }
+});
+
+
+  
 // pikaNumberGAME
 function theChoiceIsYours() {
 
@@ -46,6 +55,7 @@ function theChoiceIsYours() {
   );
 
   // showResponse
+  pikaNumber = 1; 
   if (pikaNumber === userNumber) {
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
@@ -57,6 +67,9 @@ function theChoiceIsYours() {
       pikaMovesetContainer.classList.remove("aCriticalHit");
     }, 770);
 
+    let rain = document.getElementById("rain");
+    rain.classList.add("ing");
+
     counter = ++counter;
     streak.innerHTML = `STREAK: ${counter}`;
 
@@ -64,13 +77,20 @@ function theChoiceIsYours() {
     streakContainer.classList.add("oneUp");
 
     if (counter > 0 && counter < 3) {
-      body.style.setProperty("background", "black");
+      document.documentElement.style.setProperty("--background", "url('../img/purpleRain.gif') center / cover no-repeat");
+      document.documentElement.style.setProperty("--bg-opacity", "0.5");
       document.documentElement.style.setProperty("--radio-box-shadow", "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF");
       cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
       pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
 
       pikaMove = "wildCharge";
     } else if (counter >= 3) {
+
+      document.documentElement.style.setProperty("--rain", "url(../img/rainThreeMore.gif) center / cover no-repeat");
+      document.documentElement.style.setProperty(
+        "--background",
+        "url('../img/cityScape.gif') center / cover no-repeat"
+      );
 
       pikaMove = "thunderShock";
 
@@ -125,22 +145,27 @@ function theChoiceIsYours() {
 
     // resets
     counter = 0;
-    body.style.setProperty("background", "linear-gradient(to bottom right, #B485D8, #8733c7,#B485D8)");
+    document.documentElement.style.setProperty("--background", "url('../img/background.webp')");
+    document.documentElement.style.setProperty("--bg-opacity", "0");
+    rain.classList.remove("ing");
+    // body.style.setProperty("background", "black");
     document.documentElement.style.setProperty(
       "--radio-box-shadow",
       "inset 0 0 13px yellow, 0 0 3px 5px yellow"
+    );
+    document.documentElement.style.setProperty(
+      "--rain",
+      "url(../img/rainThreeLess.gif) center / cover no-repeat"
     );
     streakContainer.classList.remove("oneUp");
     cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
     pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
     pikaMovesetContainer.classList.remove("itsSuperEffective");
-
     // reset to pikaStreakStart.gif
     document.documentElement.style.setProperty(
       "--pikaSwap",
       "url('../img/pikaStreakStart.gif') center / contain no-repeat"
     );
-
     // reset pikachu size
     document.documentElement.style.setProperty(
       "--streak-scale",

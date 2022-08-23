@@ -31,6 +31,11 @@ h2 {
 }
 
 :root {
+  --background: url('../img/background.webp');
+    /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
+
+  --bg-opacity: 0;
+
   --h1-fontsize: clamp(3.5rem, 7vw, 7rem);
   --h2-fontsize: clamp(2.5rem, 5vw, 5rem);
   --p-fontsize: clamp(1.5rem, 3vw, 3rem);
@@ -39,6 +44,8 @@ h2 {
   --streak-scale: scale(0.25);
 
   --radio-box-shadow: inset 0 0 13px yellow, 0 0 3px 5px yellow;
+
+  --rain: url(../img/rainThreeLess.gif) center / cover no-repeat;
 }
 
 *, 
@@ -53,7 +60,11 @@ html {
 }
 
 body {
-  background: linear-gradient(to bottom right, #B485D8, #8733c7,#B485D8);
+  position: relative;
+
+  background: var(--background); 
+  /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
+
   font-family: 'Gosha Sans Regular';
   margin: 0;
   overflow: hidden;
@@ -64,10 +75,23 @@ body {
   padding-top: 18vh;
 }
 
+body::after {
+  position: absolute;
+  inset: 0;
+
+  content: '';
+  
+  background-color: black;
+  opacity: var(--bg-opacity);
+  pointer-events: none;
+
+  z-index: -1;
+}
+
 #portfolio-link {
   position: fixed;
-  top: 21px;
-  left: 21px;
+  top: 55px;
+  left: 55px;
 
   z-index: 1;
 }
@@ -77,7 +101,7 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-  width: clamp(77px, 11vw, 222px);
+  width: clamp(77px, 15vw, 222px);
 }
 
 #card {
@@ -96,6 +120,8 @@ body {
   padding: 2em;
 
   width: clamp(233px, 50vw, 500px);
+
+  z-index: 1;
 }
 
 #card #pikaBubble-container {
@@ -347,25 +373,25 @@ input[type="radio"] {
 
 #card #radio-container .numberOption::before {
   position: absolute; 
-  bottom: 28px;
-  right: 28px;
+  bottom: 30px;
+  right: 30px;
 
   content: '';
 
   background: url('../img/bolt.gif') center / contain no-repeat;
   opacity: 0;
 
-  height: 58px;
-  width: 58px;
+  height: 55px;
+  width: 55px;
 
-  transform: scale(0);
-  transition: opacity 333ms ease-in, transform 333ms ease-in;
+  transform: scale(0) rotate(18deg);
+  transition: opacity 88ms ease-in-out, transform 133ms ease-in-out;
 }
 
 #card #radio-container .numberOption:checked::before {
   opacity: 1;
   
-  transform: scale(1);
+  transform: scale(1) rotate(18deg);
 } 
 
 #card #radio-container .numberOption:focus,
@@ -408,7 +434,7 @@ input[type="radio"] {
 
   opacity: 0;
 
-  z-index: -1;
+  z-index: 0;
 }
 
 /* transition lasts 0.77s via JS */
@@ -431,6 +457,27 @@ input[type="radio"] {
   
   filter: hue-rotate(40deg) drop-shadow(0 0 11px black);
   pointer-events: none;
+}
+
+#rain {
+  position: fixed;
+  inset: 0;
+
+  min-height: 100vh;
+  width: 100vw;
+  /* ? */
+
+  background: var(--rain);
+  opacity: 0;
+  transition:  opacity ease-in-out 55ms;
+  
+  z-index: -1;
+}
+
+#rain.ing { 
+  opacity: 0.58;
+
+  z-index: -1;
 }
 
 @media only screen and (max-width: 900px) {
