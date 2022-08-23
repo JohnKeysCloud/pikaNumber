@@ -46,6 +46,7 @@ function theChoiceIsYours() {
   );
 
   // showResponse
+  pikaNumber = 1;
   if (pikaNumber === userNumber) {
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
@@ -114,9 +115,9 @@ function theChoiceIsYours() {
     if (counter % 3 === 0) {
       streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
     }
-    // setTimeout(function () {
-    //   streak.style.setProperty("animation", "none");
-    // }, 333);
+    setTimeout(function () {
+      streak.style.setProperty("animation", "none");
+    }, 333);
 
   } else if (userNumber === undefined) {
     response.textContent = 'pika-pika… pika-pik-a-Number!';

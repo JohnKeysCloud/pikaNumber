@@ -16,7 +16,7 @@
 
 @keyframes levelUp {
   from {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 }
 
@@ -100,7 +100,7 @@ body {
 
 #card #pikaBubble-container {
   position: absolute;
-  bottom: 377px;
+  bottom: 365px;
   left: 255px;
 
   background: url(../img/speechBubble.gif) center / contain no-repeat;
@@ -131,8 +131,18 @@ body {
 }
 
 #card #streak-container {
+  position: absolute;
+
+  top: 111px;
+  right: 133px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   opacity: 0;
   transform: scale(0);
+  width: max-content;
 
   transition: all 111ms ease-in-out;
 }
@@ -143,11 +153,6 @@ body {
 }
 
 #card #streak {
-  position: absolute;
-
-  top: 111px;
-  right: 222px;
-
   display: inline-block;
   
   height: max-content;
@@ -161,11 +166,6 @@ body {
 }
 
 #card #pikachuUsed {
-  position: absolute;
-
-  top: 160px;
-  right: 160px;
-
   color: black;
   font-size: 1.25rem;
   font-weight: bold;
@@ -437,7 +437,7 @@ input[type="radio"] {
   #card #pikaBubble-container {
     left: -18%;
 
-    opacity: .85;
+    opacity: 0.85;
     
     transform: translateX(50%) scale(1.1);
 
@@ -459,7 +459,26 @@ input[type="radio"] {
     width: clamp(155px, 22vw, 288px);
 
     transform: translateX(-50%);
-  }  
+  } 
+
+  #card #streak-container {
+    top: -44px;
+    right: -23px;
+
+  }
+  
+  #card #streak-container > * {
+    transform: scale(0.7);
+  }
+
+  #card #streak-container #pikachuUsed {
+    position: absolute;
+    top: 577px;
+    right: 0px;
+
+    color: white;
+    text-shadow: 0px 3px 0 black;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -471,5 +490,11 @@ input[type="radio"] {
     left: -3%;
 
     transform: scale(1);
+  }
+
+  #card #streak-container #pikachuUsed {
+    top: 613px;
+    
+
   }
 }
