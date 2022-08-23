@@ -480,6 +480,38 @@ input[type="radio"] {
   z-index: -1;
 }
 
+.streakBackgrounds {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  
+}
+
+.streakBackgrounds > * {
+  position: absolute;
+  inset: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.themeContainer > * {
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+}
+
+#cityScape-theme,
+#purpleRain-theme {
+  opacity: 0;
+}
+
+#purpleRain-theme.activated,
+#cityScape-theme.activated {
+  opacity: 1;
+}
+
 @media only screen and (max-width: 900px) {
   #card #header-container #pikachu-container {
     position: absolute;

@@ -24,19 +24,23 @@ let pikaBubble = document.getElementById('pikaBubble-container');
 let pikachuUsed = document.getElementById("pikachuUsed");
 let pikaMove;
 
+// themes 
+const purpleRain = document.getElementById('purpleRain-theme');
+const cityScape = document.getElementById('cityScape-theme');
+
+
 // pressStart
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
 
 
 
-pikaRadio.addEventListener("keyup", (e) => {
-  if (e.keyCode === "Enter") {
-    enterBtn.click();
-  }
-});
-
-
+// TODO: FIX
+// pikaRadio.addEventListener("keyup", (e) => {
+//   if (e.keyCode === "Enter") {
+//     enterBtn.click();
+//   }
+// });
   
 // pikaNumberGAME
 function theChoiceIsYours() {
@@ -55,6 +59,7 @@ function theChoiceIsYours() {
   );
 
   // showResponse
+  pikaNumber = 1;
   if (pikaNumber === userNumber) {
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
@@ -69,6 +74,8 @@ function theChoiceIsYours() {
     let rain = document.getElementById("rain");
     rain.classList.add("ing");
 
+    // purpleRain.classList.add('activated');
+
     counter = ++counter;
     streak.innerHTML = `STREAK: ${counter}`;
 
@@ -76,16 +83,24 @@ function theChoiceIsYours() {
     streakContainer.classList.add("oneUp");
 
     if (counter > 0 && counter < 3) {
-      document.documentElement.style.setProperty("--background", "url('../img/purpleRain.gif') center / cover no-repeat");
-      document.documentElement.style.setProperty("--bg-opacity", "0.5");
+
+      purpleRain.classList.add("activated");
+      
       document.documentElement.style.setProperty("--radio-box-shadow", "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF");
       cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
       pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
 
       pikaMove = "wildCharge";
+
     } else if (counter >= 3) {
 
-      document.documentElement.style.setProperty("--rain", "url(../img/rainThreeMore.gif) center / cover no-repeat");
+      purpleRain.classList.remove("activated");
+      cityScape.classList.add("activated");
+
+      document.documentElement.style.setProperty(
+        "--rain",
+        "url(../img/rainThreeMore.gif) center / cover no-repeat"
+      );
       document.documentElement.style.setProperty(
         "--background",
         "url('../img/cityScape.gif') center / cover no-repeat"
@@ -141,9 +156,11 @@ function theChoiceIsYours() {
     response.textContent = 'pika-pika… pika-pik-a-Number!';
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
-
+    
     // resets
     counter = 0;
+    purpleRain.classList.remove('activated');
+    cityScape.classList.remove('activated');
     document.documentElement.style.setProperty("--background", "url('../img/background.webp')");
     document.documentElement.style.setProperty("--bg-opacity", "0");
     rain.classList.remove("ing");
