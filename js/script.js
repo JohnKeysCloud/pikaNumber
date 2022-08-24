@@ -161,10 +161,10 @@ function theChoiceIsYours() {
     // resets
     counter = 0;
 
+    // body.style.setProperty("background", "url('../img/background.webp')");
     purpleRain.classList.remove("activated");
     cityScape.classList.remove("activated");
     rain.classList.remove("ing");
-    body.style.setProperty("background", "url('../img/background.webp')");
     document.documentElement.style.setProperty("--bg-opacity", "0");
     document.documentElement.style.setProperty(
       "--radio-box-shadow",
