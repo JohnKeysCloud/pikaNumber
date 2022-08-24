@@ -73,7 +73,6 @@ html {
 
 body {
   position: relative;
-  /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
   
   font-family: 'Gosha Sans Regular';
   margin: 0;
@@ -82,7 +81,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 8vh;
+  padding-top: 11vh;
 }
 
 body::after {
@@ -103,6 +102,8 @@ body::after {
   inset: 0;
 
   background: url('../img/background.webp') center / auto repeat;
+  /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
+
   z-index: -1;
 }
 
