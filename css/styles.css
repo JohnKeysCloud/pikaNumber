@@ -73,7 +73,6 @@ html {
 
 body {
   position: relative;
-  background: url('../img/background.webp') center / auto repeat;
   /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
   
   font-family: 'Gosha Sans Regular';
@@ -96,6 +95,14 @@ body::after {
   opacity: var(--bg-opacity);
   pointer-events: none;
 
+  z-index: -1;
+}
+
+#lavenderBG {
+  position: fixed;
+  inset: 0;
+
+  background: url('../img/background.webp') center / auto repeat;
   z-index: -1;
 }
 
