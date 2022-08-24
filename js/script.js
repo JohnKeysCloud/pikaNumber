@@ -79,17 +79,17 @@ function theChoiceIsYours() {
     streakContainer.classList.add("oneUp");
 
     if (counter > 0 && counter < 3) {
-
       purpleRain.classList.add("activated");
-      
-      document.documentElement.style.setProperty("--radio-box-shadow", "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF");
+
+      document.documentElement.style.setProperty(
+        "--radio-box-shadow",
+        "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF"
+      );
       card.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
       pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
 
       pikaMove = "wildCharge";
-
     } else if (counter >= 3) {
-
       purpleRain.classList.remove("activated");
       cityScape.classList.add("activated");
 
@@ -135,34 +135,30 @@ function theChoiceIsYours() {
         // to be removed if timer is introduced
         pikaMovesetContainer.classList.remove("itsSuperEffective");
       }, 1330);
-    };
+    }
 
     // pikaMove - text Swap
     pikachuUsed.textContent = `// Pikachu used ${pikaMove}!`;
 
     // 3x multiplier
     if (counter % 3 === 0) {
-      streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
+      streak.style.setProperty(
+        "animation",
+        "levelUp 333ms ease-in infinite alternate"
+      );
     }
     setTimeout(function () {
       streak.style.setProperty("animation", "none");
     }, 333);
-
-  } else if (userNumber === undefined) {
-    response.textContent = 'pika-pika… pika-pik-a-Number!';
-    card.classList.add("incorrect");
-      setTimeout(function () {
-        card.classList.remove("incorrect");
-      }, 555);
-  } else {
+  } else if (userNumber !== pikaNumber) {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
-    
+
     // resets
     counter = 0;
-    document.documentElement.style.setProperty("--background", "url('../img/background.webp')");
+    document.style.setProperty("--background", "url('../img/background.webp')");
     document.documentElement.style.setProperty("--bg-opacity", "0");
-    purpleRain.classList.remove('activated');
-    cityScape.classList.remove('activated');
+    purpleRain.classList.remove("activated");
+    cityScape.classList.remove("activated");
     rain.classList.remove("ing");
     // body.style.setProperty("background", "black");
     document.documentElement.style.setProperty(
@@ -183,17 +179,20 @@ function theChoiceIsYours() {
       "url('../img/pikaStreakStart.gif') center / contain no-repeat"
     );
     // reset pikachu size
-    document.documentElement.style.setProperty(
-      "--streak-scale",
-      "scale(0.25)"
-    );
+    document.documentElement.style.setProperty("--streak-scale", "scale(0.25)");
 
     // incorrect visual feedback
     card.classList.add("incorrect");
     setTimeout(function () {
       card.classList.remove("incorrect");
     }, 555);
-  }
+  } else {
+    response.textContent = "pika-pika… pika-pik-a-Number!";
+    card.classList.add("incorrect");
+    setTimeout(function () {
+      card.classList.remove("incorrect");
+    }, 555);
+  } 
 
   // resetRadioBtn
   let radioName = document.getElementsByName('selectNumber');
