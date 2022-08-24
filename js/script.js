@@ -19,7 +19,7 @@ const pikaMovesetContainer = document.getElementById("pikaMoveset-container");
 let body = document.querySelector('body');
 let streakContainer = document.getElementById('streak-container');
 let streak = document.getElementById('streak');
-let cardFilter = document.getElementById("card");
+let card = document.getElementById("card");
 let pikaBubble = document.getElementById('pikaBubble-container');
 let pikachuUsed = document.getElementById("pikachuUsed");
 let pikaMove;
@@ -84,7 +84,7 @@ function theChoiceIsYours() {
       purpleRain.classList.add("activated");
       
       document.documentElement.style.setProperty("--radio-box-shadow", "inset 0 0 13px #7DF9FF, 0 0 3px 5px #7DF9FF");
-      cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
+      card.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
       pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px #7DF9FF)");
 
       pikaMove = "wildCharge";
@@ -112,7 +112,7 @@ function theChoiceIsYours() {
       );
 
       // pikachuUsedThunderShock - card filter swap
-      cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+      card.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
 
       // pikachuUsedThunderShock - pikaBubble filter swap
       pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
@@ -153,6 +153,11 @@ function theChoiceIsYours() {
     response.textContent = 'pika-pika… pika-pik-a-Number!';
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
+
+    card.classList.add('incorrect');
+    setTimeout(function () {
+      card.classList.remove('incorrect')
+    }, 555);
     
     // resets
     counter = 0;
@@ -171,7 +176,7 @@ function theChoiceIsYours() {
       "url(../img/rainThreeLess.gif) center / cover no-repeat"
     );
     streakContainer.classList.remove("oneUp");
-    cardFilter.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
+    card.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
     pikaBubble.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
     pikaMovesetContainer.classList.remove("itsSuperEffective");
     // reset to pikaStreakStart.gif

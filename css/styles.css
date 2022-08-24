@@ -20,6 +20,21 @@
   }
 }
 
+@keyframes incorrect {
+  from {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.03);
+  }
+  50% {
+    transform: rotate(3deg) scale(1.03); 
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+
 h1,
 h2 {
   margin: 0;
@@ -109,7 +124,8 @@ body::after {
   
   font-size: 1rem;
   
-  background-color: rebeccapurple;
+  background: linear-gradient(to top, #8733c7, #B485D8,  #d7aef3);
+
   box-shadow: inset 0 0 5em black, 0 0 0em 0.8em black;
   border-radius: 133px;
   border: 1px ridge #ffd73f;
@@ -122,6 +138,10 @@ body::after {
   width: clamp(233px, 50vw, 500px);
 
   z-index: 1;
+}
+
+#card.incorrect {
+  animation: incorrect 333ms ease-in-out forwards alternate;
 }
 
 #card #pikaBubble-container {
@@ -465,7 +485,6 @@ input[type="radio"] {
 
   min-height: 100vh;
   width: 100vw;
-  /* ? */
 
   background: var(--rain);
   opacity: 0;
