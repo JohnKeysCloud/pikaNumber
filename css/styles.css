@@ -216,15 +216,6 @@ body::after {
   text-shadow: -5px 3px 8px black;
 }
 
-#card #pikachuUsed {
-  color: black;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-shadow: 0 0 3px white;
-
-  width: max-content;
-}
-
 #card #streak::before {  
   content: '';
 
@@ -238,6 +229,15 @@ body::after {
 
   transform: var(--streak-scale);
   z-index: -1;
+}
+
+#card #pikachuUsed {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: 0 0 3px white;
+
+  width: max-content;
 }
 
 #card #card-content {
@@ -588,12 +588,12 @@ input[type="radio"] {
   }
 
   #card #streak-container {
-    top: 185px;
+    top: 191px;
     right: 133px;
   }
 
   #card #streak-container #pikachuUsed {
-    top: 340px;
+    top: 333px;
     right: -88px;
 
     font-size: 1rem;
