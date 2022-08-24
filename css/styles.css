@@ -109,8 +109,8 @@ body::after {
 
 #portfolio-link {
   position: fixed;
-  top: 55px;
-  left: 55px;
+  top: 38px;
+  left: 38px;
 
   z-index: 1;
 }
