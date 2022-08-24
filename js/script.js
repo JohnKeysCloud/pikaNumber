@@ -89,7 +89,7 @@ function theChoiceIsYours() {
 
       pikaMove = "wildCharge";
 
-    } else if (counter >= 3) {
+    } else if (counter >= 5) {
 
       purpleRain.classList.remove("activated");
       cityScape.classList.add("activated");
@@ -133,7 +133,7 @@ function theChoiceIsYours() {
     pikachuUsed.textContent = `// Pikachu used ${pikaMove}!`;
 
     // 3x multiplier streak animation
-    if (counter % 3 === 0) {
+    if (counter % 5 === 0) {
       streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
     }
     setTimeout(function () {
