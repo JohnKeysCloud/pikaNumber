@@ -103,7 +103,7 @@ function theChoiceIsYours() {
       document.documentElement.style.setProperty(
         "--radio-box-shadow",
         "inset 0 0 13px red, 0 0 3px 5px red"
-      );
+      )
 
       // pikachuUsedThunderShock - card filter swap
       card.style.setProperty("filter", "drop-shadow(0 0 11px yellow)");
@@ -144,6 +144,7 @@ function theChoiceIsYours() {
     }, 333);
 
   } else if (userNumber === undefined) {
+
     response.textContent = "pika-pika… pika-pik-a-Number!";
 
     // incorrect - visual feedback
@@ -151,6 +152,7 @@ function theChoiceIsYours() {
       setTimeout(function () {
         card.classList.remove("incorrect");
       }, 555);
+    
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
 
@@ -163,7 +165,6 @@ function theChoiceIsYours() {
     // resets
     counter = 0;
 
-    // body.style.setProperty("background", "url('../img/background.webp')");
     purpleRain.classList.remove("activated");
     cityScape.classList.remove("activated");
     rain.classList.remove("ing");

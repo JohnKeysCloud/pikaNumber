@@ -495,10 +495,10 @@ input[type="radio"] {
   z-index: -1;
 }
 
-.streakBackgrounds {
+#streakBackgrounds {
   position: fixed;
   inset: 0;
-  
+
   z-index: -1; 
 }
 
@@ -510,15 +510,14 @@ input[type="radio"] {
   width: 100%;
 }
 
-#cityScape-theme,
-#purpleRain-theme {
+#purpleRain-theme, 
+#cityScape-theme {
   opacity: 0;
 }
 
 #purpleRain-theme.activated,
 #cityScape-theme.activated {
   opacity: 1;
-
 }
 
 @media only screen and (max-width: 900px) {
