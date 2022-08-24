@@ -82,7 +82,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 13vh;
+  padding-top: 8vh;
 }
 
 body::after {
