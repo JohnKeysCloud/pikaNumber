@@ -63,10 +63,11 @@ function theChoiceIsYours() {
     counter = ++counter;
     streak.innerHTML = `STREAK: ${counter}`;
 
-    document.documentElement.style.setProperty("--bg-opacity", "0.38");
-
+    
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
+
+    document.documentElement.style.setProperty("--bg-opacity", "0.38");
     // TODO: slice NOPE & YUP string to change color and size
 
     pikaMovesetContainer.classList.add("aCriticalHit");
@@ -75,6 +76,7 @@ function theChoiceIsYours() {
       pikaMovesetContainer.classList.remove("aCriticalHit");
     }, 770);
 
+    // makeItRain
     rain.classList.add("ing");
     
     // showStreakContainer
