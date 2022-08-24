@@ -28,7 +28,6 @@ let pikaMove;
 const purpleRain = document.getElementById('purpleRain-theme');
 const cityScape = document.getElementById('cityScape-theme');
 
-
 // pressStart
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
@@ -157,11 +156,6 @@ function theChoiceIsYours() {
       }, 555);
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
-
-    card.classList.add('incorrect');
-    setTimeout(function () {
-      card.classList.remove('incorrect');
-    }, 555);
     
     // resets
     counter = 0;
@@ -193,6 +187,12 @@ function theChoiceIsYours() {
       "--streak-scale",
       "scale(0.25)"
     );
+
+    // incorrect visual feedback
+    card.classList.add("incorrect");
+    setTimeout(function () {
+      card.classList.remove("incorrect");
+    }, 555);
   }
 
   // resetRadioBtn
