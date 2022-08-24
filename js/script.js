@@ -21,6 +21,7 @@ let streakContainer = document.getElementById('streak-container');
 let streak = document.getElementById('streak');
 let card = document.getElementById("card");
 let pikaBubble = document.getElementById('pikaBubble-container');
+let rain = document.getElementById("rain");
 let pikachuUsed = document.getElementById("pikachuUsed");
 let pikaMove;
 
@@ -72,7 +73,6 @@ function theChoiceIsYours() {
       pikaMovesetContainer.classList.remove("aCriticalHit");
     }, 770);
 
-    let rain = document.getElementById("rain");
     rain.classList.add("ing");
     
     // showStreakContainer
@@ -126,7 +126,10 @@ function theChoiceIsYours() {
         // to be removed if timer is introduced
         pikaMovesetContainer.classList.remove("itsSuperEffective");
       }, 1330);
-    };
+    } else {
+      purpleRain.classList.remove("activated");
+      cityScape.classList.remove("activated");
+    }
 
     // pikaMove - text Swap
     pikachuUsed.textContent = `// Pikachu used ${pikaMove}!`;
@@ -175,7 +178,7 @@ function theChoiceIsYours() {
     );
     // reset pikachu size
     document.documentElement.style.setProperty("--streak-scale", "scale(0.25)");
-  }
+  };
 
   // resetRadioBtn
   let radioName = document.getElementsByName('selectNumber');
