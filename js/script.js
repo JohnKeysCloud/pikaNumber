@@ -16,7 +16,6 @@ for (const radio of pikaRadio) {
 // streakStartElements
 let counter = 0;
 const pikaMovesetContainer = document.getElementById("pikaMoveset-container");
-let body = document.querySelector('body');
 let streakContainer = document.getElementById('streak-container');
 let streak = document.getElementById('streak');
 let card = document.getElementById("card");
@@ -62,6 +61,8 @@ function theChoiceIsYours() {
 
     counter = ++counter;
     streak.innerHTML = `STREAK: ${counter}`;
+
+    document.documentElement.style.setProperty("--bg-opacity", "0.38");
 
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
@@ -126,15 +127,12 @@ function theChoiceIsYours() {
         // to be removed if timer is introduced
         pikaMovesetContainer.classList.remove("itsSuperEffective");
       }, 1330);
-    } else {
-      purpleRain.classList.remove("activated");
-      cityScape.classList.remove("activated");
-    }
+    };
 
     // pikaMove - text Swap
     pikachuUsed.textContent = `// Pikachu used ${pikaMove}!`;
 
-    // 3x multiplier
+    // 3x multiplier streak animation
     if (counter % 3 === 0) {
       streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
     }
@@ -151,18 +149,19 @@ function theChoiceIsYours() {
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
 
-    // resets
-    counter = 0;
-
     // incorrect visual feedback
     card.classList.add("incorrect");
     setTimeout(function () {
       card.classList.remove("incorrect");
     }, 555);
 
+    // resets
+    counter = 0;
+
     purpleRain.classList.remove("activated");
     cityScape.classList.remove("activated");
     rain.classList.remove("ing");
+    document.documentElement.style.setProperty("--bg-opacity", "0");
     document.documentElement.style.setProperty(
       "--radio-box-shadow",
       "inset 0 0 13px yellow, 0 0 3px 5px yellow"

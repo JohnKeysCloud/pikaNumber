@@ -46,14 +46,11 @@ h2 {
 }
 
 :root {
-  --background: url('../img/background.webp');
-    /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
-
-  --bg-opacity: 0;
-
   --h1-fontsize: clamp(3.5rem, 7vw, 7rem);
   --h2-fontsize: clamp(2.5rem, 5vw, 5rem);
   --p-fontsize: clamp(1.5rem, 3vw, 3rem);
+
+  --bg-opacity: 0;
 
   --pikaSwap: url('../img/pikaStreakStart.gif') center / contain no-repeat;
   --streak-scale: scale(0.25);
@@ -77,7 +74,7 @@ html {
 body {
   position: relative;
 
-  background: var(--background); 
+  background: url('../img/background.webp'); 
   /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
 
   font-family: 'Gosha Sans Regular';
