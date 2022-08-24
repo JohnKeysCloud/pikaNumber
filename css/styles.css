@@ -83,7 +83,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 15vh;
+  padding-top: 13vh;
 }
 
 body::after {
@@ -138,6 +138,7 @@ body::after {
 
 #card.incorrect {
   animation: incorrect 333ms ease-in-out forwards alternate;
+  -webkit-animation: incorrect 333ms ease-in-out forwards alternate;
 }
 
 #card #pikaBubble-container {
@@ -263,6 +264,7 @@ body::after {
   text-shadow: 0 0 12px black;
 
   animation: heading 5s ease-in infinite alternate;
+  -webkit-animation: heading 5s ease-in infinite alternate;
 }
 
 #card #header-container #header-text p {
@@ -274,6 +276,7 @@ body::after {
   width: min(67%, 222px);
 
   animation: heading 5s ease-in infinite alternate-reverse;
+  -webkit-animation: heading 5s ease-in infinite alternate-reverse;
 }
 
 #card #header-container #pikachu-container {
