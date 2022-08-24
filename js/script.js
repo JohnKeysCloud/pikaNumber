@@ -57,6 +57,7 @@ function theChoiceIsYours() {
   );
 
   // showResponse
+  pikaNumber = 1;
   if (pikaNumber === userNumber) {
 
     counter = ++counter;

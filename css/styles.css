@@ -81,7 +81,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 11vh;
+  padding-top: 15vh;
 }
 
 body::after {
