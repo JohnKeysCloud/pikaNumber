@@ -15,6 +15,7 @@ for (const radio of pikaRadio) {
 
 // streakStartElements
 let counter = 0;
+let body = document.querySelector('body');
 const pikaMovesetContainer = document.getElementById("pikaMoveset-container");
 let streakContainer = document.getElementById('streak-container');
 let streak = document.getElementById('streak');
@@ -161,6 +162,7 @@ function theChoiceIsYours() {
     purpleRain.classList.remove("activated");
     cityScape.classList.remove("activated");
     rain.classList.remove("ing");
+    body.style.setProperty("background", "url('../img/background.webp')");
     document.documentElement.style.setProperty("--bg-opacity", "0");
     document.documentElement.style.setProperty(
       "--radio-box-shadow",
