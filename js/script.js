@@ -151,6 +151,10 @@ function theChoiceIsYours() {
 
   } else if (userNumber === undefined) {
     response.textContent = 'pika-pika… pika-pik-a-Number!';
+    card.classList.add("incorrect");
+      setTimeout(function () {
+        card.classList.remove("incorrect");
+      }, 555);
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
 
