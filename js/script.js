@@ -160,15 +160,15 @@ function theChoiceIsYours() {
 
     card.classList.add('incorrect');
     setTimeout(function () {
-      card.classList.remove('incorrect')
+      card.classList.remove('incorrect');
     }, 555);
     
     // resets
     counter = 0;
-    purpleRain.classList.remove('activated');
-    cityScape.classList.remove('activated');
     document.documentElement.style.setProperty("--background", "url('../img/background.webp')");
     document.documentElement.style.setProperty("--bg-opacity", "0");
+    purpleRain.classList.remove('activated');
+    cityScape.classList.remove('activated');
     rain.classList.remove("ing");
     // body.style.setProperty("background", "black");
     document.documentElement.style.setProperty(
