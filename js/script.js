@@ -142,22 +142,24 @@ function theChoiceIsYours() {
     }, 333);
 
   } else if (userNumber === undefined) {
-    response.textContent = 'pika-pika… pika-pik-a-Number!';
-    // card.classList.add("incorrect");
-    //   setTimeout(function () {
-    //     card.classList.remove("incorrect");
-    //   }, 555);
+    response.textContent = "pika-pika… pika-pik-a-Number!";
+
+    // incorrect - visual feedback
+    card.classList.add("incorrect");
+      setTimeout(function () {
+        card.classList.remove("incorrect");
+      }, 555);
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
 
-    // incorrect visual feedback
-    // card.classList.add("incorrect");
-    // setTimeout(function () {
-    //   card.classList.remove("incorrect");
-    // }, 555);
+    // incorrect - visual feedback
+    card.classList.add("incorrect");
+    setTimeout(function () {
+      card.classList.remove("incorrect");
+    }, 555);
 
     // resets
-    counter = 0
+    counter = 0;
 
     purpleRain.classList.remove("activated");
     cityScape.classList.remove("activated");
