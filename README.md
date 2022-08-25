@@ -18,7 +18,7 @@ if (yourNumber = pikachusNumber) {
 
 Built & designed simultaneously.
 Intended to display my creative ability in terms of full front-end design (UX/UI)… without the use of a framework.
-High performance & SEO optimized :)
+AAA+ compliant (I think anyway lol), High performance & SEO optimized :)
 
 100%, hand-typed (No Ctrl+C, Ctrl+V's).
 No templates used & no outside inspiration for the responsive design.
