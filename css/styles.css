@@ -246,7 +246,7 @@ body::after {
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
   filter: drop-shadow(-8px 0 5px black);  
   line-height: 0.7;
-  font-size: 3.125rem;
+  font-size: clamp(2.4rem, 5.5vw, 3.125rem);
   text-shadow: -5px 3px 8px black;
 }
 
@@ -268,13 +268,12 @@ body::after {
 #card #streak {
   display: inline-block;
 
-  color: red;
-  font-size: 5rem;
+  color: #e55fe5;
+  font-size: clamp(3rem , 8vw ,4.4rem);
+  text-shadow: 3.3px 3.3px black;
 
-  margin-left: 0.88rem;
+  margin-left: 11px;
 }
-
-
 
 #card #pikachuUsed {
   color: black;
@@ -604,19 +603,20 @@ input[type="radio"] {
   }
 
   #card #streak-container {
-    top: 177px;
-    right: 155px;
+    top: 191px;
+    right: 165px;
   }
 
   #card #streak-container #pikachuUsed {
     position: absolute;
-    top: 403px;
-    right: -77px;
+
+    top: 388px;
+    right: -111px;
   }
 
   #card #streakFull::before {  
-    top: -188px;
-    right: -88px;
+    top: -177px;
+    right: -83px;
   }
 }
 
@@ -633,19 +633,15 @@ input[type="radio"] {
   }
 
   #card #streak-container {
-    top: 191px;
+    top: 177px;
     right: 133px;
   }
 
   #card #streak-container #pikachuUsed {
-    top: 333px;
-    right: -88px;
+    top: 355px;
+    right: -111px;
 
     font-size: 1rem;
-  }
-
-  #card #streakFull { 
-    font-size: 2.313rem; 
   }
 
   #card #streakFull::before {  

@@ -92,10 +92,11 @@ function theChoiceIsYours() {
 
       pikaMove = "wildCharge";
 
-    } else if (counter >= 5) {
+    } else if (counter >= 5 && counter < 10) {
 
       purpleRain.classList.remove("activated");
       cityScape.classList.add("activated");
+      streak.style.setProperty("color", "red");
 
       pikaMove = "thunderShock";
 
@@ -130,6 +131,10 @@ function theChoiceIsYours() {
         // to be removed if timer is introduced
         pikaMovesetContainer.classList.remove("itsSuperEffective");
       }, 1330);
+    } else if (counter > 9) {
+      streak.style.setProperty("color", "yellow");
+      pikaMovesetContainer.classList.add("itsSuperEffective");
+      clearTimeout(pikaMovesetContainer);
     };
 
     // pikaMove - text Swap
@@ -155,7 +160,7 @@ function theChoiceIsYours() {
       setTimeout(function () {
         card.classList.remove("incorrect");
       }, 555);
-    
+
   } else {
     response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
 
