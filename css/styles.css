@@ -35,6 +35,37 @@
   }
 }
 
+@keyframes streakOneUp {
+  from {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg) scale(2.3);
+  }
+  50% {
+    transform: rotate(3deg) scale(2.3); 
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes streakFiveMultiplier {
+  from {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-360deg) scale(2.5);
+  }
+  50% {
+    transform: rotate(360deg) scale(2.5); 
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+  
+}
+
 h1,
 h2 {
   margin: 0;
@@ -203,33 +234,47 @@ body::after {
   transform: scale(1);
 }
 
-#card #streak {
+#streakFull {
+  position: relative;
+
   display: inline-block;
-  
+
   height: max-content;
   width: max-content;
 
   color: whitesmoke;
-  filter: drop-shadow(-8px 0 5px black);  
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
+  filter: drop-shadow(-8px 0 5px black);  
+  line-height: 0.7;
   font-size: 3.125rem;
   text-shadow: -5px 3px 8px black;
 }
 
-#card #streak::before {  
+#card #streakFull::before {  
   content: '';
 
   position: absolute;
   top: -125px;
   right: 50px;
 
-  background: var(--pikaSwap);
   height: 285px;
   width: 400px;
-
+  
+  background: var(--pikaSwap);
   transform: var(--streak-scale);
   z-index: -1;
 }
+
+#card #streak {
+  display: inline-block;
+
+  color: red;
+  font-size: 5rem;
+
+  margin-left: 0.88rem;
+}
+
+
 
 #card #pikachuUsed {
   color: black;
@@ -569,7 +614,7 @@ input[type="radio"] {
     right: -77px;
   }
 
-  #card #streak::before {  
+  #card #streakFull::before {  
     top: -188px;
     right: -88px;
   }
@@ -599,11 +644,11 @@ input[type="radio"] {
     font-size: 1rem;
   }
 
-  #card #streak { 
+  #card #streakFull { 
     font-size: 2.313rem; 
   }
 
-  #card #streak::before {  
+  #card #streakFull::before {  
     top: -188px;
     right: -111px;
   }

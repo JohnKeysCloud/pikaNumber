@@ -57,12 +57,14 @@ function theChoiceIsYours() {
   );
 
   // showResponse
+  pikaNumber = 0;
   if (pikaNumber === userNumber) {
 
     counter = ++counter;
-    streak.innerHTML = `STREAK: ${counter}`;
+    streak.innerHTML = counter;
 
-    
+    streak.style.setProperty("animation", "streakOneUp 333ms ease-in-out forwards alternate");
+
     let response = document.getElementById("response");
     response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
 
@@ -136,7 +138,10 @@ function theChoiceIsYours() {
 
     // 3x multiplier streak animation
     if (counter % 5 === 0) {
-      streak.style.setProperty("animation", "levelUp 333ms ease-in infinite alternate");
+      streak.style.setProperty(
+        "animation",
+        "streakFiveMultiplier 333ms ease-in-out forwards alternate"
+      );
     }
     setTimeout(function () {
       streak.style.setProperty("animation", "none");
