@@ -20,6 +20,10 @@ const pikaMovesetContainer = document.getElementById("pikaMoveset-container");
 let streakContainer = document.getElementById('streak-container');
 let streak = document.getElementById('streak');
 let card = document.getElementById("card");
+let responseGameBegun = document.getElementById('gameBegun');
+let responseInstruction = document.getElementById("instruction");
+let yayOrNay = document.getElementById('yayOrNay');
+let pikaNumberContainer = document.getElementById('pikaNumber-container');
 let pikaBubble = document.getElementById('pikaBubble-container');
 let rain = document.getElementById("rain");
 let pikachuUsed = document.getElementById("pikachuUsed");
@@ -56,6 +60,10 @@ function theChoiceIsYours() {
     `pikaNumber = ${pikaNumber}. It has a type of` + ' ' + typeof pikaNumber + '.'
   );
 
+  pikaNumberContainer.textContent = pikaNumber;
+  responseInstruction.style.setProperty("display", "none");
+  responseGameBegun.style.setProperty("display", "inline-block");
+
   // showResponse
   if (pikaNumber === userNumber) {
 
@@ -63,12 +71,12 @@ function theChoiceIsYours() {
     streak.innerHTML = counter;
 
     streak.style.setProperty("animation", "streakOneUp 333ms ease-in-out forwards alternate");
-
-    let response = document.getElementById("response");
-    response.textContent = `pika-YAY! I was thinking of ${pikaNumber}`;
+    
+    yayOrNay.textContent = 'Yay!';
+    yayOrNay.style.setProperty("color", "chartreuse");
+    pikaNumberContainer.style.setProperty("color", "chartreuse");
 
     document.documentElement.style.setProperty("--bg-opacity", "0.38");
-    // TODO: slice NOPE & YUP string to change color and size
 
     pikaMovesetContainer.classList.add("aCriticalHit");
     // A critical hit!
@@ -152,8 +160,9 @@ function theChoiceIsYours() {
     }, 333);
 
   } else if (userNumber === undefined) {
-
-    response.textContent = "pika-pika… pika-pik-a-Number!";
+    responseInstruction.style.setProperty("display", "inline-block");
+    responseGameBegun.style.setProperty("display", "none");
+    instruction.textContent = "pika-pika… pika-pik-a-Number!";
 
     // incorrect - visual feedback
     card.classList.add("incorrect");
@@ -162,7 +171,13 @@ function theChoiceIsYours() {
       }, 555);
 
   } else {
-    response.textContent = `pika-NOPE! I was thinking of ${pikaNumber}.`;
+
+    yayOrNay.textContent = "Nope!";
+    yayOrNay.style.setProperty("color", "red");
+    pikaNumberContainer.style.setProperty("color", "red");
+
+    // TODO: FIX HERE
+    // instruction.textContent = 
 
     // incorrect - visual feedback
     card.classList.add("incorrect");
@@ -201,5 +216,5 @@ function theChoiceIsYours() {
   // resetUserNumber
   userNumber = undefined;
 
-  console.log(response.innerHTML);
+  console.log(gameBegun.innerText);
 };

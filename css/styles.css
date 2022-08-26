@@ -194,12 +194,11 @@ body::after {
   transform: scale(1.1);
 }
 
-#card #response {
+#card .response {
   position: absolute;
   bottom: 74px;
   left: 50%;
   transform: translate(-50%);
-  
   
   color: black;
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
@@ -209,7 +208,33 @@ body::after {
   opacity: 1;
   text-align: center;
 
-  width: 130px;
+  width: 138px;
+}
+
+#card #gameBegun {
+  display: none;
+
+  font-size: 1.125rem;
+}
+
+#yayOrNay,
+#pikaNumber-container {
+  display: inline-block;
+
+  color: chartreuse;
+  font-size: 1.8rem;
+  line-height: 0;
+  text-shadow: 1px 1px 3px black;
+}
+
+#pikaNumber-container {
+  background: rgb(55, 55, 55);
+  box-shadow: inset 0 0 11px black, 0 0 3px 2.7px;
+  border-radius: 13px;
+  line-height: 0.8;
+  padding: 1px 8px;
+  text-shadow: 0 3.3px 3px black;
+  width: 43px;
 }
 
 #card #streak-container {
@@ -244,9 +269,9 @@ body::after {
 
   color: whitesmoke;
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
+  font-size: clamp(2.4rem, 5.5vw, 3.125rem);
   filter: drop-shadow(-8px 0 5px black);  
   line-height: 0.7;
-  font-size: clamp(2.4rem, 5.5vw, 3.125rem);
   text-shadow: -5px 3px 8px black;
 }
 
