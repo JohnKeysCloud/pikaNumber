@@ -112,7 +112,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 15vh;
+  padding-top: 13vh;
 }
 
 body::after {
@@ -191,14 +191,14 @@ body::after {
   height: 179px;
   width: 200px;
 
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 #card .response {
   position: absolute;
-  bottom: 74px;
+  bottom: 77px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   
   color: black;
   font-family: 'pixeBoy', 'Courier New', Courier, monospace;
@@ -211,27 +211,28 @@ body::after {
   width: 138px;
 }
 
-#card #gameBegun {
+#card #gameBegun.response {
   display: none;
-
+  
   font-size: 1.125rem;
+  transform: translateX(-50%) translateY(-1px);  
+  line-height: 0.88;
 }
 
-#yayOrNay,
-#pikaNumber-container {
+.response #yayOrNay,
+.response #pikaNumber-container {
   display: inline-block;
 
   color: chartreuse;
   font-size: 1.8rem;
-  line-height: 0;
   text-shadow: 1px 1px 3px black;
 }
 
-#pikaNumber-container {
-  background: rgb(55, 55, 55);
-  box-shadow: inset 0 0 11px black, 0 0 3px 2.7px;
+.response #pikaNumber-container {
+  background: rgb(88, 88, 88);
+  box-shadow: inset 0 0 11px black, 0 0 3px 3.8px;
   border-radius: 13px;
-  line-height: 0.8;
+  margin-top: 5px;
   padding: 1px 8px;
   text-shadow: 0 3.3px 3px black;
   width: 43px;
