@@ -224,7 +224,7 @@ body::after {
   display: inline-block;
 
   color: chartreuse;
-  font-size: 1.8rem;
+  font-size: 1.688rem;
   text-shadow: 1px 1px 3px black;
 }
 
@@ -548,7 +548,6 @@ input[type="radio"] {
 }
 
 #pikaMoveset-container #pikaMoveset {
-  
   height: 100%;
   width: 100%;
   

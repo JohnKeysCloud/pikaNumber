@@ -1,17 +1,17 @@
 //get userNumber
 let userNumber;
-const pikaRadio = document.getElementsByClassName('numberOption');
+const pikaRadio = document.getElementsByName("selectNumber");
 for (const radio of pikaRadio) {
   radio.onclick = (e) => {
     userNumber = +e.target.value;
     console.log(
       `userNumber = ${userNumber}. It has a type of` +
-      ' ' +
-      typeof userNumber +
-      '.'
+        " " +
+        typeof userNumber +
+        "."
     );
   };
-}
+};
 
 // streakStartElements
 let counter = 0;
@@ -37,12 +37,15 @@ const cityScape = document.getElementById('cityScape-theme');
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
 
+
 // TODO: FIX
-// pikaRadio.addEventListener("keyup", (e) => {
-//   if (e.keyCode === "Enter") {
-//     enterBtn.click();
-//   }
-// });
+// if (pikaRadio.checked) {
+//   pikaRadio.addEventListener("keyup", (e) => {
+//     if (e.key === "Enter") {
+//       enterBtn.click();
+//     }
+//   });
+// }
   
 // pikaNumberGAME
 function theChoiceIsYours() {
@@ -206,10 +209,9 @@ function theChoiceIsYours() {
     document.documentElement.style.setProperty("--streak-scale", "scale(0.25)");
   };
 
-  // resetRadioBtn
-  let radioName = document.getElementsByName('selectNumber');
-  for (let i = 0; i < radioName.length; i++) radioName[i].checked = false;
-
+  // resetRadio
+  for (let i = 0; i < pikaRadio.length; i++) pikaRadio[i].checked = false;
+  
   // resetUserNumber
   userNumber = undefined;
 
