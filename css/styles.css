@@ -112,7 +112,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 13vh;
+  padding-top: 15vh;
 }
 
 body::after {

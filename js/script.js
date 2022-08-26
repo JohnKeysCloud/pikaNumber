@@ -2,15 +2,16 @@
 let userNumber;
 const pikaRadio = document.getElementsByName("selectNumber");
 for (const radio of pikaRadio) {
-  radio.onclick = (e) => {
+  radio.onfocus = (e) => {
     userNumber = +e.target.value;
-    console.log(
-      `userNumber = ${userNumber}. It has a type of` +
-        " " +
-        typeof userNumber +
-        "."
-    );
   };
+
+  // pressStart via radio - enter keyup
+  radio.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      enterBtn.click();
+    }
+  });
 };
 
 // streakStartElements
@@ -33,20 +34,10 @@ let pikaMove;
 const purpleRain = document.getElementById('purpleRain-theme');
 const cityScape = document.getElementById('cityScape-theme');
 
-// pressStart   
+// pressStart via btn - click  
 const enterBtn = document.getElementById('enterBtn');
 enterBtn.addEventListener('click', theChoiceIsYours);
 
-
-// TODO: FIX
-// if (pikaRadio.checked) {
-//   pikaRadio.addEventListener("keyup", (e) => {
-//     if (e.key === "Enter") {
-//       enterBtn.click();
-//     }
-//   });
-// }
-  
 // pikaNumberGAME
 function theChoiceIsYours() {
 
@@ -59,6 +50,13 @@ function theChoiceIsYours() {
   }
 
   let pikaNumber = getRandomIntInclusive();
+
+  console.log(
+    `userNumber = ${userNumber}. It has a type of` +
+      " " +
+      typeof userNumber +
+      "."
+  );
   console.log(
     `pikaNumber = ${pikaNumber}. It has a type of` + ' ' + typeof pikaNumber + '.'
   );
@@ -210,10 +208,10 @@ function theChoiceIsYours() {
   };
 
   // resetRadio
-  for (let i = 0; i < pikaRadio.length; i++) pikaRadio[i].checked = false;
-  
-  // resetUserNumber
-  userNumber = undefined;
+  // for (let i = 0; i < pikaRadio.length; i++) pikaRadio[i].checked = false;
 
-  console.log(gameBegun.innerText);
+  // resetUserNumber
+  // userNumber = undefined;
+
+  console.log(gameBegun.textContent);
 };
