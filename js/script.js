@@ -123,7 +123,7 @@ function theChoiceIsYours() {
       // pikachuUsedThunderShock - img swap
       document.documentElement.style.setProperty(
         "--pikaSwap",
-        "url('../img/pikaStreakThreePlus.gif') center / contain no-repeat"
+        "url('../assets/img/pikachu/pikaStreakThreePlus.gif') center / contain no-repeat"
       );
 
       // enlarge Pikachu
@@ -171,13 +171,10 @@ function theChoiceIsYours() {
       }, 555);
 
   } else {
-
     yayOrNay.textContent = "Nope!";
     yayOrNay.style.setProperty("color", "red");
     pikaNumberContainer.style.setProperty("color", "red");
-
-    // TODO: FIX HERE
-    // instruction.textContent = 
+    streak.style.setProperty("color", "#e55fe5");
 
     // incorrect - visual feedback
     card.classList.add("incorrect");
@@ -203,7 +200,7 @@ function theChoiceIsYours() {
     // reset to pikaStreakStart.gif
     document.documentElement.style.setProperty(
       "--pikaSwap",
-      "url('../img/pikaStreakStart.gif') center / contain no-repeat"
+      "url('../assets/img/pikachu/pikaStreakStart.gif') center / contain no-repeat"
     );
     // reset pikachu size
     document.documentElement.style.setProperty("--streak-scale", "scale(0.25)");
