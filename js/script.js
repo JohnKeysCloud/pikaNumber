@@ -2,7 +2,7 @@
 let userNumber;
 const pikaRadio = document.getElementsByName("selectNumber");
 for (const radio of pikaRadio) {
-  radio.onfocus = (e) => {
+  radio.onchange = (e) => {
     userNumber = +e.target.value;
   };
 
