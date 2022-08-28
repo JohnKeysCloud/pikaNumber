@@ -66,7 +66,6 @@ function theChoiceIsYours() {
   responseGameBegun.style.setProperty("display", "inline-block");
 
   // showResponse
-  pikaNumber = 0;
   if (pikaNumber === userNumber) {
 
     counter = ++counter;
