@@ -112,7 +112,7 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 17vh;
+  padding-top: 5vh;
 }
 
 body::after {
@@ -653,7 +653,7 @@ input[type="radio"] {
   #card {
     padding: 1.11em;
 
-    transform: scale(0.72);
+    transform: scale(0.8);
   }
 
   #card #pikaBubble-container {
