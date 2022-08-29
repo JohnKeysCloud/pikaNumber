@@ -601,6 +601,10 @@ input[type="radio"] {
 }
 
 @media only screen and (max-width: 900px) {
+  #card {
+    transform: scale(1);
+  }
+
   #card #header-container #pikachu-container {
     position: absolute;
     bottom: 100px;
@@ -648,6 +652,8 @@ input[type="radio"] {
 @media only screen and (max-width: 600px) {
   #card {
     padding: 1.11em;
+
+    transform: scale(0.72);
   }
 
   #card #pikaBubble-container {
