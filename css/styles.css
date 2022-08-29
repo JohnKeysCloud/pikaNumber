@@ -112,7 +112,8 @@ body {
 
   display: grid;
   place-items: center;
-  padding-top: 5vh;
+
+  padding-top: 233px;
 }
 
 body::after {
@@ -601,10 +602,6 @@ input[type="radio"] {
 }
 
 @media only screen and (max-width: 900px) {
-  #card {
-    transform: scale(1);
-  }
-
   #card #header-container #pikachu-container {
     position: absolute;
     bottom: 100px;
@@ -652,8 +649,6 @@ input[type="radio"] {
 @media only screen and (max-width: 600px) {
   #card {
     padding: 1.11em;
-
-    transform: scale(0.8);
   }
 
   #card #pikaBubble-container {
