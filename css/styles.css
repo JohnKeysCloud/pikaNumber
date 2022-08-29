@@ -113,7 +113,7 @@ body {
   display: grid;
   place-items: center;
 
-  padding-top: 233px;
+  padding-top: min(28vh, 170px);
 }
 
 body::after {
