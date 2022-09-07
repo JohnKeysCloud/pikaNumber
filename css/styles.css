@@ -141,8 +141,8 @@ body::after {
 
 #portfolio-link {
   position: fixed;
-  top: 38px;
-  left: 38px;
+  bottom: 100px;
+  right: 55px;
 
   z-index: 1;
 }
@@ -152,7 +152,7 @@ body::after {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-  width: clamp(77px, 15vw, 222px);
+  width: clamp(33px, 8vw, 88px);
 }
 
 #card {
