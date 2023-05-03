@@ -129,11 +129,12 @@ body::after {
   z-index: -1;
 }
 
-#lavenderBG {
+#lavender-background {
   position: fixed;
   inset: 0;
 
-  background: url('../assets/img/themes/backgrounds/bg_lavenderSky.webp') center / auto repeat;
+  background: url('../assets/img/themes/backgrounds/bg_lavenderSky.webp') center / contain;
+  min-height: 100vh;
   /* photoBy href"https://flickerfae.tumblr.com/post/93460308187/subtly-animated-pixel-night-sky-background-i-did" */
 
   z-index: -1;
@@ -141,7 +142,7 @@ body::after {
 
 #portfolio-link {
   position: fixed;
-  bottom: 100px;
+  bottom: 55px;
   right: 55px;
 
   z-index: 1;

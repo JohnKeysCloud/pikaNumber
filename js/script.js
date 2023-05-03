@@ -160,7 +160,7 @@ function theChoiceIsYours() {
       streak.style.setProperty("animation", "none");
     }, 333);
 
-  } else if (userNumber === undefined) {
+  } else if (userNumber === undefined || userNumber === null) {
     responseInstruction.style.setProperty("display", "inline-block");
     responseGameBegun.style.setProperty("display", "none");
     instruction.textContent = "pika-pika… pika-pik-a-Number!";
@@ -208,10 +208,9 @@ function theChoiceIsYours() {
   };
 
   // resetRadio
-  // for (let i = 0; i < pikaRadio.length; i++) pikaRadio[i].checked = false;
-
-  // resetUserNumber
-  // userNumber = undefined;
-
-  console.log(gameBegun.textContent);
+  for (let i = 0; i < pikaRadio.length; i++) {
+    pikaRadio[i].checked = false;
+    pikaRadio[i].blur();
+    userNumber = null;
+  };
 };
